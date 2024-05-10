@@ -1,4 +1,7 @@
-# string_filepath = 'C:/Users/User/PythonProjects/FileCodec/files/TXTFile.txt'
-# file = open(string_filepath, encoding = 'utf8')
-# list_encode_result = []
-# for string_current_row in file:
+from HammingCodec import hamming_codec_encode, hamming_codec_decode
+
+s = 'Я так хотел остаться...'
+z = hamming_codec_encode(s)
+print(z)
+r = hamming_codec_decode(z)
+print(r)
