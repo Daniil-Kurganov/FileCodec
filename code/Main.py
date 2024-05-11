@@ -13,7 +13,7 @@ if string_file_type == 'txt':
         else: file_result.write(hamming_codec_decode(string_current_row[:-1]) + '\n')
     file_source.close()
     file_result.close()
-if string_file_type == 'docx':
+elif string_file_type == 'docx':
     file_source, file_result = docx.Document(string_filepath_source), docx.Document()
     for paragraph_current in file_source.paragraphs:
         if bool_operation_is_encode: file_result.add_paragraph(hamming_codec_encode(paragraph_current.text))
