@@ -4,6 +4,7 @@ from HammingCodec import hamming_codec_encode, hamming_codec_decode
 file_source = openpyxl.load_workbook('C:/Users/User/PythonProjects/FileCodec/files/ExcelFileEncode.xlsx', read_only = True)
 file_result = openpyxl.Workbook()
 bool_operation_is_encode = False
+int_count
 for sheet_current_source in file_source.worksheets:
     sheet_current_result = file_result.create_sheet(title = sheet_current_source.title)
     for row_current_source in sheet_current_source.iter_rows():
