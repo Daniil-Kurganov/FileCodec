@@ -22,7 +22,7 @@ def cutting_code_subword_to_information_word(string_code_underword: str) -> str:
         else: list_current_information_underword.append(string_code_underword[int_position_of_bit - 1])
     return ''.join(list_current_information_underword)
 def hamming_codec_encode(string_input_text_real: str) -> str:
-    '''Кодирование текста и представление в виде числа'''
+    '''Кодирование текста и представление кодового слова в бинарном формате'''
     global int_r, int_n, int_k
     string_input_text_binary = bin(int.from_bytes(string_input_text_real.encode(), 'big'))[2:]
     list_informaion_underwords, list_code_underwords = [], []
@@ -53,7 +53,7 @@ def hamming_codec_encode(string_input_text_real: str) -> str:
         list_code_underwords.append(calculation_of_correction_bits(list_positions_of_correction_bits, list_code_underword))
     return ''.join(list_code_underwords) + '.' + str(int_count_of_zeros)
 def hamming_codec_decode(string_input_code_word: str) -> str:
-    '''Декодирование текста из числа кодового слова'''
+    '''Декодирование текста из бинарного кодового слова'''
     global int_n
     int_point_of_trimm = string_input_code_word.find('.')
     string_code_word = string_input_code_word[:int_point_of_trimm]
